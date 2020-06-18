@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TaskManager</title>
+</head>
+<body>
+	<h1>Who do you want to share your Project with?</h1>
+	<h1 th:text="${project.name}"></h1>
+	<form id = "shareUserForm"
+      th:action="@{/projects/{path}/share(path=${project.id})}" th:object="${username}"
+      method="POST">
+    <table>
+        <tr>
+            <td><label for="userNameInput">Username</label>
+            <td><input id=userNameInput type="text" th:field="${username}" placeholder="USERNAME" required/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Share</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TaskManager</title>
+</head>
+<body>
+	<h1>Select Tag</h1>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Color</th>
+					<th>Select</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="tag : ${tags}">
+					<td th:text="${tag.name}"></td>
+					<td th:text="${tag.color}"></td>
+					<td>
+						<form method="POST"
+							th:action="@{/task/{taskid}/assignTag/{tagid}(taskid=${task.id}, tagid=${tag.id})}">
+							<button type="submit" name="submit" value="value">ASSIGN</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

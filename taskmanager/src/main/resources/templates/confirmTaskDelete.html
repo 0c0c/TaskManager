@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TaskManager</title>
+</head>
+<body>
+	<h1>Do you want to delete your Task?</h1>
+	<div>
+		<form id="deleteProjectForm"
+			th:action="@{/task/{path}/delete/(path=${task.id})}"
+			th:object="${task}" method="POST">
+			<div th:text="*{name}"></div>
+			<div th:text="*{description}"></div>
+			<div>
+				<button type="submit">Delete</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TaskManager</title>
+</head>
+<body>
+	<h1>Add new Tag to Project</h1>
+	<form id="registerTagForm" th:action="@{/projects/{path}/addTag(path=${project.id})}"
+		th:object="${tagForm}" method="POST">
+		<table>
+			<tr>
+				<td><label for="tagNameInput">Tag Name</label></td>
+				<td><input id="tagNameInput" type="text" placeholder="NAME"
+					required th:field="*{name}" /></td>
+			</tr>
+			<tr>
+				<td><label for="colorInput">Color</label></td>
+				<td><input id=colorInput type="text"
+					placeholder="COLOR" required th:field="*{color}" /></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Add</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

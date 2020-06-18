@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TaskManager</title>
+</head>
+<body>
+	<h1 th:text="${project.name}"></h1>
+	<h4 th:text="${project.description}" style="color: gray"></h4>
+	<div th:if="${members.size() > 0}">
+		<h3>Shared with</h3>
+		<ul>
+			<li th:each="member : ${members}">
+				<div th:text="${member.firstName} + ' ' + ${member.lastName}"></div>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<a th:href="'/projects/' + ${project.id} + '/update'">UPDATE PROJECT</a> 
+		<a th:href="'/projects/' + ${project.id} + '/delete'">DELETE PROJECT</a> 
+		<a th:href="'/projects/' + ${project.id} + '/share'">SHARE PROJECT</a>
+		<a th:href="'/projects/' + ${project.id} + '/addTask'">ADD TASK</a>
+		<a th:href="'/projects/' + ${project.id} + '/addTag'">ADD TAG TO PROJECT</a>
+	</div>
+	<h3>Tasks</h3>
+	<ul>
+		<li th:each="task : ${tasks}">
+			<div><a th:href="'/task/' + ${task.id}" th:text="${task.name}"></a></div>
+			<div th:text="${task.description}"></div>
+			<div><a th:href="'/task/' + ${task.id} + '/delete'">delete task</a> </div>
+			<div><a th:href="'/task/' + ${task.id} + '/assignTo/' + ${project.id}">assign task to project member</a> </div>
+			<div><a th:href="'/task/' + ${task.id} + '/assignTag/' + ${project.id}">assign tag to task</a> </div>
+			<div><a th:href="'/task/' + ${task.id} + '/addComment/' + ${project.id}">add comment to task</a> </div>
+		</li>
+	</ul>
+	<h3>Tags</h3>
+	<ul>
+		<li th:each="tag : ${tags}">
+			<div th:text="${tag.name}"></div>
+			<div th:text="${tag.color}"></div>
+		</li>
+	</ul>
+</body>
+</html>

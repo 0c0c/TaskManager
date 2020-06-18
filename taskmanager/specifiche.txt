@@ -1,0 +1,181 @@
+DESCRIZIONE CASI D'USO DI TASKMANAGER - PROGETTO SIW GIUGNO 2020
+
+***CASI D'USO USER***
+
+Caso d’uso: SIGNUP – Attore primario: una persona non registrata nel Sistema.
+
+Scenario principale di successo:
+-Una persona vuole iscriversi al Sistema
+-La persona inserisce i propri dati (nome, cognome,username e password) attraverso il Portale
+-Il sistema valida i dati e registra il nuovo Utente
+
+
+
+Caso d’uso: AUTENTICAZIONE – Attore primario: un Utente registrato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente registrato vuole autenticarsi nel Sistema
+-L'Utente inserisce le proprie credenziali (username e password) attraverso il Portale 
+-Il sistema convalida le credenziali inserite e autentica il nuovo Utente
+
+Estenzioni:
+-Credenziali dell'Utente non convalidate, il Sistema non autentica l'Utente
+
+
+
+Caso d’uso: VISUALIZZARE IL MIO PROFILO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole visualizzare il proprio profilo nel Sistema
+-L'Utente sceglie l'attività "visualizza profilo"
+-Il sistema mostra username, nome, cognome, ruolo, data di creazione e data di ultima modifica dell'Utente
+
+
+
+Caso d’uso: AGGIORNARE IL MIO PROFILO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole aggiornare il proprio profilo nel Sistema
+-L'Utente sceglie l'attività "aggiorna profilo"
+-Il sistema mostra username, nome, cognome dell'Utente
+-L'Utente apporta delle modifiche ai propri dati
+-Il Sistema registra le modifiche apportate
+
+
+
+
+***CASI D'USO PROJECT***
+
+Caso d’uso: CREA UN NUOVO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole creare un nuovo progetto
+-L'Utente sceglie l'attività "crea progetto"
+-L'Utente inserisce nome e descrizione del nuovo progetto
+-Il Sistema registra i dati relativi al nuovo progetto
+
+
+
+Caso d’uso: VISUALIZZARE I MIEI PROGETTI – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole visualizzare i propri progetti
+-L'Utente sceglie l'attività "visualizza i miei progetti"
+-Il Sistema mostra i dati (nome, descrizione, task, tag, membri) relativi al nuovo progetto
+
+
+
+Caso d’uso: VISUALIZZARE I PROGETTI CONDIVISI CON ME – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole visualizzare i progetti condivisi con lui
+-L'Utente sceglie l'attività "visualizza i progetti condivisi con me"
+-Il Sistema mostra i dati (nome, descrizione) di tutti i progetti di cui fa parte
+
+
+
+Caso d’uso: AGGIORNARE I DATI DI UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole modificare i dati di un suo progetto
+-L'Utente sceglie l'attività "modifica progetto"
+-Il Sistema mostra i dati (nome, descrizione) relativi al progetto
+-L'Utente apporta modifiche ai dati del progetto
+-Il Sistema registra le modifiche al progetto
+
+
+
+Caso d’uso: CANCELLARE UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole cancellare un proprio progetto
+-L'Utente sceglie l'attività "cancella progetto"
+-Il Sistema cancella tutti i dati relativi al progetto
+
+
+
+Caso d’uso: CONDIVIDERE UN MIO PROGETTO CON UN ALTRO UTENTE – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole condividere un proprio progetto con un altro Utente
+-L'Utente sceglie l'attività "condividi progetto"
+-L'Utente inserisce l'username dell'Utente col quale vuole condividere il proprio progetto
+-Il Sistema cerca l'Utente a cui corrisponde l'username inserito e lo aggiunge ai partecipanti al progetto
+
+Estenzioni:
+-Il Sistema non trova nessun Utente a cui corrisponda l'username inserito, il Sistema non aggiunge nessun partecipante al progetto
+
+
+
+Caso d’uso: AGGIUNGERE UN NUOVO TAG AD UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole aggiungere un nuovo tag ad un proprio progetto
+-L'Utente sceglie l'attività "aggiungi tag al progetto"
+-L'Utente inserisce nome e colore del nuovo tag
+-Il Sistema crea un nuovo tag con i dati inseriti e assegna il nuovo tag al progetto
+
+
+
+
+***CASI D'USO TASK***
+
+Caso d’uso: AGGIUNGERE UN NUOVO TASK AD UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole aggiungere un task ad un proprio progetto
+-L'Utente sceglie l'attività "aggiungi task al progetto"
+-L'Utente inserisce nome e descrizione del nuovo task
+-Il Sistema crea un nuovo task con i dati inseriti e assegna il nuovo task al progetto
+
+
+
+Caso d’uso: AGGIORNARE UN TASK DI UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole aggiornare un task assegnato ad un proprio progetto
+-L'Utente sceglie l'attività "aggiorna task"
+-Il Sistema mostra nome e descrizione del task
+-L'Utente apporta modifiche ai dati del task
+-Il Sistema registra le modifiche al task
+
+
+
+Caso d’uso: CANCELLARE UN TASK DI UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole cancellare un task assegnato ad un proprio progetto
+-L'Utente sceglie l'attività "cancella task"
+-Il Sistema cancella tutti i dati relativi al task
+
+
+
+Caso d’uso: ASSEGNARE UN TASK DI UN MIO PROGETTO AD UN UTENTE PARTECIPANTE – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole assegnare un task di un proprio progetto ad un Utente partecipante al progetto 
+-L'Utente sceglie l'attività "assegna task"
+-Il Sistema mostra una lista, riportante nome e cognome, relativa agli Utenti partecipanti al progetto
+-L'Utente seleziona un Utente partecipante dalla lista
+-Il Sistema assegna il task all'Utente selezionato e aggiorna i dati del task
+
+
+
+Caso d’uso: ASSEGNARE UN TAG AD UN TASK DI UN MIO PROGETTO – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole assegnare un tag ad un task di un proprio progetto  
+-L'Utente sceglie l'attività "assegna tag al task"
+-Il Sistema mostra una lista, riportante nome e colore, relativa ai tag del progetto
+-L'Utente seleziona un tag dalla lista
+-Il Sistema assegna il tag selezionato al task
+
+
+
+Caso d’uso: AGGIUNGERE UN COMMENTO AD UN TASK DI CUI HO VISIBILITà – Attore primario: un Utente autenticato nel Sistema.
+
+Scenario principale di successo:
+-Un Utente autenticato vuole aggiungere un commento ad un task di cui ha visibilità 
+-L'Utente sceglie l'attività "aggiungi commento"
+-L'Utente scrive un commento
+-Il Sistema registra il commento al task
